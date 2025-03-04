@@ -26,16 +26,16 @@ export function ComingSoon() {
         </div>
 
         <div className="relative z-10 p-3">
-          <Image src="/title.png" alt="Title" width={171} height={50} />
-          <Image src="/Coming_Soon_text.png" alt="Coming Soon text" width={536} height={85.39} />
+          <Image src="/title.png" alt="Title" width={171} height={50} className="mt-10" />
+          <Image src="/Coming_Soon_text.png" alt="Coming Soon text" width={536} height={85.39} className="mt-10" />
           <p className="font-bold font-[family-name:var(--font-exo)] text-[48px] text-[#36A1D4] leading-14">Local independent retailers <br /> offering more than convenience</p>
           <div className="justify-center flex m-[20px]">
             <p className="w-[670px] leading-8 font-[family-name:var(--font-roboto)]">BetterDiens is a niche <span className="font-bold">co-operative</span> mindset ecommerce marketplace where local
               independent retailers sell home improvement & outdoor activities products at competitive
               prices with superior customer service. Join the waitlist to get <span className="font-bold">xaClub membership ($30 value) free for one year</span>, which offers bigger deals and early access to promotions.</p>
           </div>
-          <div className="mt-6 flex flex-col sm:flex-row md:flex-row justify-center">
-            <div>
+          <div className="mt-6 flex flex-col sm:flex-row md:flex-row 2xl:flex-row justify-center">
+            <div className="flex flex-row">
               <input
                 type="email"
                 placeholder="E-mail address.."
@@ -44,17 +44,29 @@ export function ComingSoon() {
                 className="px-4 py-2 w-full h-14 sm:w-120 bg-white 
                 border border-r-0 rounded-l-lg border-gray-600 text-black font-bold font-[family-name:var(--font-outfit)] focus:outline-none"
               />
-              <select
-                value={state}
-                onChange={(e) => setState(e.target.value)}
-
-                className="px-4 py-2 w-full sm:w-auto h-14 bg-white border border-l-0 border-gray-600 shadow-md text-black font-bold font-[family-name:var(--font-outfit)] "
-              >
-                <option value="">State</option>
-                <option value="CA">California</option>
-                <option value="NY">New York</option>
-                <option value="TX">Texas</option>
-              </select>
+              <div className="relative sm:w-auto">
+                <select
+                  value={state}
+                  onChange={(e) => setState(e.target.value)}
+                  className={`px-4 py-2 w-full sm:w-32 h-14 bg-white shadow-lg 
+                  text-black font-bold font-[family-name:var(--font-outfit)] pr-10
+                  appearance-none ${state === "" ? "text-gray-400" : "text-black"}`}
+                >
+                  <option value="">State</option>
+                  <option value="CA">California</option>
+                  <option value="NY">New York</option>
+                  <option value="TX">Texas</option>
+                </select>
+                <div className="absolute inset-y-0 right-3 flex items-center pointer-events-none transition-transform duration-200 peer-focus:rotate-180">
+                  <Image
+                    src="/dropdown.png"
+                    alt="Dropdown"
+                    width={14}
+                    height={8}
+                    className="transition-transform duration-200 peer-focus:rotate-180"
+                  />
+                </div>
+              </div>
             </div>
             <button
               type="button"
