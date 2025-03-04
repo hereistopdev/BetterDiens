@@ -66,13 +66,13 @@ export function ComingSoon() {
 
           <div className="flex gap-4 justify-center mt-6">
             <a href="#" aria-label="LinkedIn">
-              <Image src="/linkedin.png" alt="LinkedIn" width={48} height={48} />
+              <Image src="/Linkedin.png" alt="LinkedIn" width={48} height={48} />
             </a>
             <a href="#" aria-label="Instagram">
               <Image src="/Facebook.png" alt="FaceBook" width={48} height={48} />
             </a>
             <a href="#" aria-label="YouTube">
-              <Image src="/youtube.png" alt="YouTube" width={48} height={48} />
+              <Image src="/YouTube.png" alt="YouTube" width={48} height={48} />
             </a>
           </div>
         </div>
