@@ -6,10 +6,10 @@ export interface RequestNotifyPropsType {
 
 export interface CustomSelectPropsType {
   placeholder: string;
-  selectedValue: any;
-  setSelectedValue: (value: any) => void;
-  optionData: any[];
-  customStyle?: any;
+  selectedValue: string;
+  setSelectedValue: (value: string) => void;
+  optionData: string[];
+  customStyle?: string;
 }
 
 export interface CustomTableDataType {
@@ -38,5 +38,4 @@ export interface CustomAlertProps {
   setOpen: (value: boolean) => void;
   content: string;
   severity: "success" | "info" | "warning" | "error";
-  customStyle?: any;
 }

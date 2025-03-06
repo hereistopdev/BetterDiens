@@ -5,11 +5,15 @@ import Snackbar, { SnackbarCloseReason } from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
 import { CustomAlertProps } from "@/utils";
 
-export function CustomAlert({ open, setOpen, content, severity, customStyle }: CustomAlertProps) {
-
+export function CustomAlert({
+  open,
+  setOpen,
+  content,
+  severity,
+}: CustomAlertProps) {
   const handleClose = (
     event?: React.SyntheticEvent | Event,
-    reason?: SnackbarCloseReason,
+    reason?: SnackbarCloseReason
   ) => {
     if (reason === "clickaway") {
       return;
