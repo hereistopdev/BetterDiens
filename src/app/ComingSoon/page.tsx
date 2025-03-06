@@ -65,32 +65,40 @@ export default function ComingSoon() {
   }
 
   return (
-    <div className="relative flex w-full h-screen text-white">
+    <div className="relative flex w-full min-h-screen text-white">
       <div className="absolute inset-0">
-        <Image src="/background.png" alt="Construction Tools" fill />
+        <Image
+          src="/background.png"
+          alt="Construction Tools"
+          fill
+          className="object-cover"
+        />
       </div>
-      <div className="absolute w-full flex flex-col text-center px-4 sm:px-6">
+      <div className="w-full flex flex-col text-center px-4 sm:px-6 ">
         <div className="relative z-10 p-3">
           <div className="flex flex-col sm:flex-row justify-between align-middle">
-            <Image
-              src="/company-logo.png"
-              alt="Title"
-              width={537}
-              height={150}
-            />
-            <button
+            <div className="flex flex-row align-middle justify-center gap-5 mt-10 ml-5">
+              <Image
+                src="/correct-icon.png"
+                alt="Title"
+                width={80}
+                height={50}
+              />
+              <Image src="/logo.png" alt="Title" width={350} height={40} />
+            </div>
+            {/* <button
               className="bg-purple-600 w-full sm:w-30 h-12 font-[family-name:var(--font-outfit)] font-bold rounded-lg sm:mt-10 cursor-pointer"
               onClick={handleClickView}
             >
               View
-            </button>
+            </button> */}
           </div>
-          <p className="font-bold font-[family-name:var(--font-exo)] text-[48px] text-black leading-14">
+          <p className="font-bold font-[family-name:var(--font-exo)] text-[48px] text-black leading-14 mt-15">
             Local independent retailers <br /> offering more than convenience
           </p>
           <div className="flex justify-center m-[20px]">
-            <p className="w-[670px] text-black leading-8 font-[family-name:var(--font-roboto)] text-[24px]">
-              Website is coming soon. Get a chance tp get{" "}
+            <p className="w-[670px] text-black font-light leading-8 font-[family-name:var(--font-roboto)] text-[24px]">
+              Website is coming soon. Get a chance to get{" "}
               <span className="font-bold">xaClub </span>membership (
               <span className="font-bold">$30 value</span>) free for one year,
               which offers bigger deals and early access to promotions (
@@ -105,12 +113,12 @@ export default function ComingSoon() {
                 placeholder="E-mail address.."
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="px-4 py-2 w-full h-14 sm:w-50 md:w-80 bg-white 
-                sm:rounded-l-lg  border-gray-600 text-black font-bold font-[family-name:var(--font-outfit)] focus:outline-none"
+                className="px-4 py-2 w-full h-14 sm:w-50 md:w-80 bg-white cursor-pointer
+                sm:rounded-l-lg  border-gray-600 text-black font-semibold font-[family-name:var(--font-outfit)] focus:outline-none"
               />
               <div className="relative sm:w-auto mt-4 sm:m-0">
                 <CustomSelect
-                  placeholder="Are you a Seller?"
+                  placeholder="Are you a Seller"
                   selectedValue={selectedSeller}
                   setSelectedValue={setSelectedSeller}
                   optionData={isSellerData}
@@ -129,8 +137,9 @@ export default function ComingSoon() {
             <button
               type="button"
               className={`bg-purple-600 px-5 py-2 w-full sm:w-auto sm:rounded-r-lg mt-4 sm:m-0
-              font-semibold font-[family-name:var(--font-outfit)] hover:bg-purple-700 transition ${loadingButton ? "opacity-50 cursor-not-allowed" : ""
-                }`}
+              font-semibold font-[family-name:var(--font-outfit)] hover:bg-purple-700 transition ${
+                loadingButton ? "opacity-50 cursor-not-allowed" : ""
+              }`}
               onClick={handleClickNotify}
             >
               {loadingButton ? "loading...." : "Notify Me"}
