@@ -1,7 +1,7 @@
-import { ComingSoon } from "@/components/ComingSoon";
-
 export default function Home() {
   return (
-    <ComingSoon />
+    <div>
+      <p>123</p>
+    </div>
   )
 }
