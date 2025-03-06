@@ -13,7 +13,14 @@ export default function ViewDataPage() {
     async function getData() {
       setLoadingData(true);
       try {
-        const responseData = await axios.get("https://fd30-107-155-105-218.ngrok-free.app/api/client");
+        const responseData = await axios.get(
+          "https://fd30-107-155-105-218.ngrok-free.app/api/client",
+          {
+            headers: {
+              "ngrok-skip-browser-warning": "true"
+            }
+          }
+        );
         console.log(responseData.data);
         setData(responseData.data);
       } catch (error) {
