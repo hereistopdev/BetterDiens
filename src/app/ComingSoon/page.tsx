@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 import { CustomSelect } from "@/components/Select";
 import { CustomAlert } from "@/components/Alert";
 import { RequestNotifyPropsType } from "@/utils";
@@ -24,12 +23,6 @@ export default function ComingSoon() {
   const [loadingButton, setLoadingButton] = useState<boolean>(false);
   const [successAlertOpen, setSuccessAlertOpen] = useState<boolean>(false);
   const [failedAlertOpen, setFailedAlertOpen] = useState<boolean>(false);
-
-  const router = useRouter();
-
-  function handleClickView() {
-    router.push("/ComingSoon/ViewData");
-  }
 
   async function handleClickNotify() {
     if (!email || !selectedState || !selectedSeller) {
@@ -86,12 +79,6 @@ export default function ComingSoon() {
               />
               <Image src="/logo.png" alt="Title" width={350} height={40} />
             </div>
-            {/* <button
-              className="bg-purple-600 w-full sm:w-30 h-12 font-[family-name:var(--font-outfit)] font-bold rounded-lg sm:mt-10 cursor-pointer"
-              onClick={handleClickView}
-            >
-              View
-            </button> */}
           </div>
           <p className="font-bold font-[family-name:var(--font-exo)] text-[48px] text-black leading-14 mt-15">
             Local independent retailers <br /> offering more than convenience
